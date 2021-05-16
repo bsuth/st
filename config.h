@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Hack:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -191,9 +191,10 @@ static MouseShortcut mshortcuts[] = {
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_plus,        zoom,           {.f = +1} },
+	{ ControlMask,          XK_minus,       zoom,           {.f = -1} },
+	{ TERMMOD,              XK_underscore,  zoom,           {.f = -1} },
+	{ ControlMask,          XK_equal,       zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
